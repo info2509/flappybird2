@@ -1,24 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
-<widget xmlns     = "http://www.w3.org/ns/widgets"
-        xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.iteam.floppy.house"
-        version   = "2.0">
-    <name>Floppy Horse</name>
-
-    <description>
-        Floppy Horse
-    </description>
-
-    <author href="http://itime.vn" email="info@itime.vn">
-        iTeam
-    </author>
-    <!-- Define app splash screen for each platform. -->
-    <gap:plugin name="com.adobe.plugins.gaplugin" version="2.3.1" />
-	<content src="index.html" />
-	<access origin="*" />
-    <preference name="Fullscreen" value="true" />
-    <preference name="WebViewBounce" value="true" />
-
+<widget xmlns     = "http://www.w3.org/ns/widgets" xmlns:gap = "http://phonegap.com/ns/1.0">
+	<gap:plugin name="com.adobe.plugins.gaplugin" version="2.3.1" />
 </widget>
