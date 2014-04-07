@@ -29,19 +29,40 @@
   }
   </style>
 </head>
-<body>
+<body onload="onLoad()">
 <div id="loading">Loading...</div>
 <div id="screen"></div>
 <div id="github"></div>
 <script src="index.min.js?v=02131824"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  if(document.domain === 'hyspace.io'){
-    ga('create', 'UA-21699184-3', 'hyspace.io');
-    ga('send', 'pageview');
-  }
-</script>
+	<script>
+    function onLoad() {
+    	document.addEventListener("deviceready", onDeviceReady, false);
+    }
+    function onDeviceReady() {
+    	var admob_ios_key = 'a1534290f47cb13';
+    	var admob_android_key = 'a1534290f47cb13';
+    	var adId = (navigator.userAgent.indexOf('Android') >=0) ? admob_android_key : admob_ios_key;
+    	
+    	if ( window.plugins && window.plugins.AdMob ) {
+    	    
+    	    var am = window.plugins.AdMob;
+    	    am.createBannerView( 
+    	    		{
+    		            'publisherId': adId,
+    		            'adSize': am.AD_SIZE.BANNER,
+    		            'bannerAtTop': true
+    	            }, function() {
+    	            	am.requestAd( { 'isTesting':false }, function() {
+    	            		am.showAd( true );
+    	            	}, function() {
+    	            		alert('failed to request ad');	
+    	            	})
+    	            }, function(){
+    	            	alert( "failed to create ad view" );
+    	            });
+    	} else {
+    		alert('AdMob plugin not available/ready.');
+    	}
+    }
+    </script>
 </html>
