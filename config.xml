@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.iteam.floppy.house"
+        version   = "1.0">
+    <name>Floppy House</name>
+
+    <description>
+        Floppy House
+    </description>
+
+    <author href="http://itime.vn" email="info@itime.vn">
+        iTeam
+    </author>
+    <!-- Define app splash screen for each platform. -->
+    <gap:plugin name="org.apache.cordova.dialogs" version="0.2.6" />
+	<content src="index.html" />
+	<access origin="*" />
+    <preference name="Fullscreen" value="true" />
+    <preference name="WebViewBounce" value="true" />
+
+</widget>
