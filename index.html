@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Floppy House</title>
+  <title>Floppy Horse</title>
   <meta name="viewport" content="width=device-width">
   <style>
   body{
@@ -65,4 +65,12 @@
     	}
     }
     </script>
+	
+	<script>
+	var gaPlugin;
+	function onDeviceReady() {
+    gaPlugin = window.plugins.gaPlugin;
+    gaPlugin.init(successHandler, errorHandler, "UA-42655132-11", 10);
+	}
+	</script>
 </html>
